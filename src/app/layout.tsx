@@ -13,8 +13,14 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Fun Portal",
+  title: {
+    default: "Fun Portal",
+    template: "%s | Fun Portal",
+  },
   description: "Online gaming platform",
+  icons: {
+    icon: "/logo/logo.svg",
+  },
 };
 
 export default function RootLayout({
@@ -25,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} dark antialiased`}
       >
         {children}
       </body>
