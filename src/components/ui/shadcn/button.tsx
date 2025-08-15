@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/utils/shadcn-utils";
 
 const buttonVariants = cva(
-  "focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive inline-flex shrink-0 cursor-pointer items-center justify-center gap-2 text-sm font-medium whitespace-nowrap transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+  "focus-visible:border-ring transition-all focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive inline-flex shrink-0 cursor-pointer items-center justify-center gap-2 font-medium whitespace-nowrap transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
   {
     variants: {
       color: {
@@ -18,13 +18,14 @@ const buttonVariants = cva(
         default: "bg-[var(--btn-bg)] text-[var(--btn-fg)]",
         outline: "bg-accent text-[var(--btn-bg)]",
         invert:
-          "bg-accent text-[var(--btn-bg)] duration-500 hover:bg-[var(--btn-bg)] hover:text-[var(--btn-fg)]",
+          "bg-accent text-[var(--btn-bg)] hover:bg-[var(--btn-bg)] hover:text-[var(--btn-fg)]",
       },
       size: {
-        default: "h-9 px-4 py-2 has-[>svg]:px-3",
-        sm: "h-8  gap-1.5 px-3 has-[>svg]:px-2.5",
-        lg: "h-10  px-6 has-[>svg]:px-4",
-        icon: "size-9",
+        default:
+          "px-2.5 py-1.5 md:px-3.5 md:py-2 text-xs md:text-sm has-[>svg]:px-3",
+        sm: "px-1.5 py-0.5 text-xs md:px-2 md:py-1 has-[>svg]:px-2.5",
+        lg: "px-2.5 text-sm md:text-base py-1.5 md:px-3.5 md:py-2.5 has-[>svg]:px-4",
+        icon: "size-7 md:size-9",
       },
       shape: {
         default: "rounded-md",
@@ -41,9 +42,9 @@ const buttonVariants = cva(
       },
       effect: {
         none: "",
-        glow: "shadow-[0_0_10px_var(--btn-bg)] hover:shadow-[0_0_20px_var(--btn-bg)] active:shadow-[0_0_30px_var(--btn-bg)] transition-shadow duration-300",
+        glow: "shadow-[0_0_10px_var(--btn-bg)] hover:shadow-[0_0_20px_var(--btn-bg)] active:shadow-[0_0_30px_var(--btn-bg)] duration-300",
         shadowLift:
-          "hover:shadow-[0_0_30px_var(--btn-bg)] active:shadow-[0_0_15px_var(--btn-bg)] transition-shadow duration-300",
+          "hover:shadow-[0_0_30px_var(--btn-bg)] active:shadow-[0_0_15px_var(--btn-bg)] duration-300",
         shine:
           "relative overflow-hidden before:content-[''] before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/30 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-500",
       },

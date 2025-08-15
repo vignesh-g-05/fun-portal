@@ -1,12 +1,5 @@
 import Image from "next/image";
 
-import { Orbitron } from "next/font/google";
-
-const orbitron = Orbitron({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-});
-
 type LogoProps = {
   variant?: "full" | "image" | "text";
   className?: string;
@@ -15,7 +8,7 @@ type LogoProps = {
 export default function Page({ variant = "full", className }: LogoProps) {
   return (
     <div
-      className={`flex items-center gap-3 ${orbitron.className} ${className} `}
+      className={`flex items-center gap-3 [font-family:var(--font-orbitron)] ${className}`}
     >
       {variant !== "text" && (
         <Image
